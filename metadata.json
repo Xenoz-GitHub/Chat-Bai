@@ -1,0 +1,6 @@
+{
+  "name": "ChatBai - Cebuano AI Assistant",
+  "description": "Ang imong maalamon ug mahigalaong Bisaya AI buddy. Production-ready Cebuano-first AI chatbot.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@layer base {
+  :root, [data-theme="dark"] {
+    --bg-app: #0B0F17;
+    --bg-surface: #151D2B;
+    --bg-elevated: #1E293B;
+    --border-color: #263143;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    --user-bubble-bg: #1E293B;
+    --user-bubble-text: #F8FAFC;
+    --user-bubble-border: #263143;
+    --code-block-bg: #111827;
+    --code-header-bg: #151D2B;
+    --scrollbar-thumb: rgba(148, 163, 184, 0.22);
+    --scrollbar-thumb-hover: rgba(148, 163, 184, 0.45);
+  }
+
+  [data-theme="light"] {
+    --bg-app: #FFFFFF;
+    --bg-surface: #F9FAFB;
+    --bg-elevated: #F1F5F9;
+    --border-color: #E2E8F0;
+    --border-subtle: rgba(0, 0, 0, 0.08);
+    --text-primary: #0F172A;
+    --text-secondary: #64748B;
+    --text-muted: #94A3B8;
+    --user-bubble-bg: #E2E8F0;
+    --user-bubble-text: #0F172A;
+    --user-bubble-border: #CBD5E1;
+    --code-block-bg: #F8FAFC;
+    --code-header-bg: #F1F5F9;
+    --scrollbar-thumb: rgba(15, 23, 42, 0.2);
+    --scrollbar-thumb-hover: rgba(15, 23, 42, 0.35);
+  }
+
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-app);
+    color: var(--text-primary);
+    overflow: hidden;
+    overscroll-behavior-y: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  code, pre, kbd {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+/* Global sleek, minimal ChatGPT-like scrollbar (No ugly white tracks or arrows) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Mobile invisible-yet-functional scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
